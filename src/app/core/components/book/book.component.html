@@ -1,8 +1,24 @@
 <h1>مدیریت کتابخانه</h1>
 
 <h2>لیست کتاب‌ها</h2>
-<ul>
-    <li *ngFor="let book of books">
-        {{ book.title }} - {{ book.author }}
-    </li>
-</ul>
+
+<div class="book-container">
+    <table class="book-table">
+        <thead>
+            <tr>
+                <th>ردیف</th>
+                <th>عنوان کتاب</th>
+                <th>نویسنده</th>
+                <th>قیمت</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.price | number }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
